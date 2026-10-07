@@ -1,0 +1,57 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Baso Pak De Ammar Admin') }}{% endblock %}
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Baso Pak De Ammar Admin') }}</a></div>
+{% endblock %}
+{% block extrastyle %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+  :root {
+    --brand: #5B8C85;
+    --brand-dark: #3E5C58;
+    --bg: #F3F6F5;
+    --card: #FFFFFF;
+    --text: #2F3E3C;
+  }
+  body, #header, .module, .inline-group, .button, input[type=submit], input[type=button], .submit-row input, a:link, a:visited {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  }
+  #header {
+    background: var(--brand-dark);
+    color: #fff;
+    padding: 14px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  }
+  #site-name a { font-size: 22px; font-weight: 700; letter-spacing: .3px; }
+  #user-tools a { color: #E2E8F0; }
+  #content { background: var(--bg); padding: 28px; }
+  .module, .inline-group, #content-main, #content-related {
+    background: var(--card);
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    overflow: hidden;
+  }
+  .module h2, .module caption, .inline-group h2 {
+    background: #FFFFFF; color: var(--text);
+    font-size: 14px; letter-spacing: .4px;
+    border-bottom: 2px solid var(--brand);
+  }
+  div.breadcrumbs { background: #EDF2F7; color: #4A5568; border-radius: 0; border-bottom: 1px solid #E2E8F0; }
+  div.breadcrumbs a { color: var(--brand-dark); }
+  a:link, a:visited { color: #4A7C76; }
+  .button, input[type=submit], input[type=button], .submit-row input {
+    background: var(--brand); border-radius: 6px; font-weight: 600;
+  }
+  .button:hover, input[type=submit]:hover, input[type=button]:hover { background: var(--brand-dark); }
+  .object-tools a:link, .object-tools a:visited { background: var(--brand-dark); border-radius: 6px; }
+  table thead th { background: #F7FAFC; color: #4A5568; border-bottom: 2px solid #CBD5E0; }
+  tr.row1, tr.row2 { background: #fff; }
+  #changelist-filter { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.04); }
+  tr:hover td, tr:hover th { background: #F7FAFC; }
+  #changelist-filter h2 { background: #fff; color: #4A5568; border-bottom: 1px solid #E2E8F0; }
+  input, select, textarea { border-radius: 6px; border: 1px solid #CBD5E0; }
+  input:focus, select:focus, textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 2px rgba(91,140,133,.18); outline: none; }
+</style>
+{% endblock %}
